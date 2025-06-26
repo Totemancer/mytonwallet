@@ -89,7 +89,7 @@ function InAppBrowser({
       `sharecaption=${lang('Share')}`,
       `theme=${theme}`,
       `animated=${animationLevel ?? ANIMATION_LEVEL_DEFAULT > 0 ? 'yes' : 'no'}`,
-      `User-Agent=MyTonWallet/${pkg.version} (${IS_IOS ? 'iOS' : 'Android'})`
+      `userAgent=MyTonWallet/${pkg.version} (${IS_IOS ? 'iOS' : 'Android'})`
     ]).join(',')}`;
     inAppBrowser = cordova.InAppBrowser.open(url,
       '_blank',
