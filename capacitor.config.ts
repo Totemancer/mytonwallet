@@ -1,5 +1,6 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 import type { KeyboardResize } from '@capacitor/keyboard';
+import pkg from './package.json';
 
 const { APP_ENV = 'production' } = process.env;
 
@@ -43,6 +44,7 @@ const config: CapacitorConfig = {
     path: 'mobile/android',
     includePlugins: COMMON_PLUGINS,
     webContentsDebuggingEnabled: APP_ENV !== 'production',
+    overrideUserAgent: `MyTonWallet/${pkg.version} (Android)`,
   },
   ios: {
     path: 'mobile/ios',
@@ -54,6 +56,7 @@ const config: CapacitorConfig = {
     // expected the main WebView to be focused instead of the Sheet. With the parameter, both the contexts are out of
     // focus at the app start, and after ~60ms the main WebView gets the focus, which is ok for the app.
     initialFocus: false,
+    overrideUserAgent: `MyTonWallet/${pkg.version} (iOS)`,
   },
   plugins: {
     SplashScreen: {
