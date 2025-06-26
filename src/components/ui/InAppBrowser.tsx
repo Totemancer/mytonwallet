@@ -19,7 +19,7 @@ import { useDappBridge } from '../explore/hooks/useDappBridge';
 
 import { getIsAnyNativeBottomSheetModalOpen } from './Modal';
 
-import pkg from '../../package.json';
+import pkg from '../../../package.json';
 
 interface StateProps {
   title?: string;
